@@ -4,7 +4,9 @@
 
 # Quickest Flutter Setup Yet!
 
-Want to start making apps and stop messing with troubleshooting Flutter installation? Look no further, get up and running in 10 minutes by just installing the bare-bones dependencies needed for Android mobile development with the Flutter development environment.
+*Want to stop messing with troubleshooting complex Flutter installations and start making apps?*
+
+**Look no further!** Get up and running in 10 minutes by just installing the bare-bones dependencies needed for Android mobile development.
 
 ----------------------------------------------------------------------------
 
@@ -25,10 +27,11 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 
 ## 0. Requirements
 
-- This tutorial is only for Android mobile applications = less installs
+- Unfortunately, there's no one-click install solution for this complex development environment
+- This tutorial is only for Android mobile applications, which means less components
 - Tested in Windows 10 (I'm sure this works for Windows 11 too)
 - Need fast internet for ~1.5 GB of file downloads
-- No prior installations of:
+- Do not have any prior installations of:
    - Java for Windows
    - Android SDK
    - VSCode
@@ -42,15 +45,13 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 ### Java (OpenJDK)
 
 - Given Oracle's change of heart with Java 8, we'll use OpenJDK instead
-- Find the latest OpenJDK for Windows (x64) [here](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21)
-   - You can directly download v21.0.6 from: https://aka.ms/download-jdk/microsoft-jdk-21.0.6-windows-x64.msi
+- Find the latest OpenJDK for Windows (x64) [here](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21) or you can directly download `v21.0.6` from: https://aka.ms/download-jdk/microsoft-jdk-21.0.6-windows-x64.msi
 - Download through web browser and double-click the `*.msi` file to install
 - During installation, change the settings below to have `JAVA_HOME` and JavaSoft (Oracle) registry keys overwritten
 
 ### Android SDK ***without*** the entire Android Studio
 
-- Find latest "Command line tools only" [here](https://developer.android.com/studio) (scroll all the way down)
-   - You can directly download v11076708 from: https://dl.google.com/android/repository/commandlinetools-win-11076708_latest.zip
+- Find latest "Command line tools only" [here](https://developer.android.com/studio) (scroll all the way down), or you can directly download `v11076708` from: https://dl.google.com/android/repository/commandlinetools-win-11076708_latest.zip
 - Download through web browser and extract in Downloads
 - Create the following directory structure: `C:\Android\SDK\cmdline-tools\latest`
 - Within the `latest` directory, cut or copy all of the contents in the `cmdline-tools` directory from the unzipped file above
@@ -80,8 +81,7 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 
 ### Flutter SDK
 
-- Find link to latest version of Flutter SDK [here](https://docs.flutter.dev/release/archive?tab=linux#stable-channel) (stable channel)
-   - You can directly download v3.29.1 from: https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.1-stable.zip
+- Find link to latest version of Flutter SDK [here](https://docs.flutter.dev/release/archive?tab=linux#stable-channel) (stable channel), or you can directly download `v3.29.1` from: https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.1-stable.zip
 - Download through web browser and extract in Downloads
 - Navigate into the extracted directory and move the `flutter` subdirectory to the `C:\Android` directory you made earlier
 - Tell flutter where Android SDK is by running this in Command Prompt:
@@ -93,7 +93,7 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 
 - In the Start Menu, search for "environment" and open the "Edit the system environment variables" entry
 - Click on "Environment Variables" in the bottom-right of the popup
-- Under "System variables," highlight the "Path" entry and click on "Edit"
+- Under "User variables," highlight the "Path" entry and click on "Edit"
 - In the popup, Click on "New" and add the path to `C:\Android\flutter\bin` here
 - Click "OK" to close out all windows
 - If you have Command Prompt or VSCode open, you must restart them for these changes to take effect
@@ -106,13 +106,12 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 
 ### VSCode
 
-- Download and extract VSCode Portable [here](https://code.visualstudio.com/download) (i.e., the `*.zip` version)
-   - You can directly download the latest version from: https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive
+- Download and extract VSCode Portable [here](https://code.visualstudio.com/download) (i.e., the `*.zip` version), or you can directly download the latest version from: https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive
 - You can place this extracted directory anywhere you want, on your Desktop, in Program Files, etc.
-- Create a new directory to store all your Flutter apps, let's use `C:\Android\Flutter Projects` for now
-- Open VSCode by navigating to the extracted folder and executing `..\VSCode-win32-x64-1.98.1\Code.exe`
+- Create a new directory to store all your Flutter apps, let's create `C:\Android\Flutter Projects` for this tutorial
+- Open VSCode by navigating to this extracted folder in File Explorer and executing `..\VSCode-win32-x64-1.98.1\Code.exe`
 - On the top-left, click on Explorer (`CTRL+SHIFT+E`) and on "Open Folder" to set the current working directory to `C:\Android\Flutter Projects`
-- If you see anything about "trusted execution," know that code you didn't write should be handled carefully
+- VSCode will warn you about "trusted execution," reminding you that code you didn't write should be handled carefully
 
 ### Flutter Extension and Configuration
 
@@ -120,8 +119,8 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 - Search for "Flutter"
 - Install Flutter extension by Dart Code (may also install other extension dependencies like Dart)
 - In the Command Palette (`CTRL+SHIFT+P`, it is **critical** to have the "`>`" character here), type "`> flutter`" and choose "`> Flutter: Run Flutter Doctor`"
-- A popup in the bottom-right will ask about Flutter SDK, click on "Locate SDK" and point it to `C:\Android\flutter` and it will start running
-- A new pane will open at the bottom showing console output, you should have the following [√] marks:
+- A popup in the bottom-right will ask about Flutter SDK, click on "Locate SDK" and point it to `C:\Android\flutter` and it will continue its diagnostic assessment
+- A new pane will open at the bottom showing console output, you should have the following `[√]` marks:
 
 ```
 [√] Flutter (REQUIRED)
@@ -156,15 +155,16 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 - Then select "**Edge** edge - web"
 - Click on the "`main.dart`" script and press `F5`, this will kick off the build and send the app over to a new Edge browser window
 - This simple app is a counter that increments when you click on the bottom-right button, **cool!**
-- Stop the app by closing our the Edge window
+- Stop the app by pressing Stop (`SHIFT+F5`) in VSCode or by closing out the Edge window
 
 ### Building Default Application to AVD
 
 - Now we will build and run this application on our AVD; in the Command Palette, run "`>Flutter: Select Device`"
-- Then select "**Start my avd** mobile emulator       Offline Emulators" which will boot up the AVD
-- Once the AVD is fully booted and on the home screen, leave this open in the background
+- Then select "**Start my avd** mobile emulator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Offline Emulators" which will boot up the AVD
+- After the boot up sequence the AVD will show the home screen of the emulated phone, leave this open in the background
 - Click on the "`main.dart`" script and press `F5`, this will kick off the build and send the app over to your AVD
 - Now you've got the app running on a emulated Android phone, **magnificent!**
+- Stop the app by pressing Stop (`SHIFT+F5`) in VSCode or by closing out the AVD window
 
 [Back to Top](#table-of-contents)
 
