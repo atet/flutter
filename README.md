@@ -172,7 +172,11 @@
 
 ## 4. Next Steps
 
-The sky is the limit! You might want to learn how to build your project into an [Android Package Kit (APK)](https://stackoverflow.com/a/51682414) so that you can deploy to a physical phone.
+**The sky is the limit!**
+
+- Learn how to build your project into an [Android Package Kit (APK)](https://stackoverflow.com/a/51682414) so that you can deploy to a physical phone
+- Configure additional components to build to a Windows desktop application or an iOS mobile app
+- Interface your VSCode environment with large language models through [Continue.dev](https://www.youtube.com/watch?v=V3Yq6w9QaxI) and take your development to the next level
 
 [Back to Top](#table-of-contents)
 
@@ -194,6 +198,7 @@ Build Flutter app to APK | https://stackoverflow.com/a/51682414
 Issue | Solution
 --- | ---
 **"It's not working!"** | This concise tutorial has distilled hours of sweat, tears, and troubleshooting; _it can't not work_
+**"Can I install this on WSL2 in Windows 10?"** | I spun my wheels on trying to get this installed on WSL2 in Windows 10; very long story short, it's likely no longer possible due to KVM no longer being supported for Windows 10 WSL2 and only in Windows 11 now
 
 [Back to Top](#table-of-contents)
 
