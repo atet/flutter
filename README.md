@@ -43,14 +43,14 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 
 - Given Oracle's change of heart with Java 8, we'll use OpenJDK instead
 - Find the latest OpenJDK for Windows (x64) [here](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21)
-   - For example, you can directly download v21.0.6 from: https://aka.ms/download-jdk/microsoft-jdk-21.0.6-windows-x64.msi
+   - You can directly download v21.0.6 from: https://aka.ms/download-jdk/microsoft-jdk-21.0.6-windows-x64.msi
 - Download through web browser and double-click the `*.msi` file to install
 - During installation, change the settings below to have `JAVA_HOME` and JavaSoft (Oracle) registry keys overwritten
 
 ### Android SDK ***without*** the entire Android Studio
 
 - Find latest "Command line tools only" [here](https://developer.android.com/studio) (scroll all the way down)
-   - For example, you can directly download v11076708 from: https://dl.google.com/android/repository/commandlinetools-win-11076708_latest.zip
+   - You can directly download v11076708 from: https://dl.google.com/android/repository/commandlinetools-win-11076708_latest.zip
 - Download through web browser and extract in Downloads
 - Create the following directory structure: `C:\Android\SDK\cmdline-tools\latest`
 - Within the `latest` directory, cut or copy all of the contents in the `cmdline-tools` directory from the unzipped file above
@@ -81,7 +81,7 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 ### Flutter SDK
 
 - Find link to latest version of Flutter SDK [here](https://docs.flutter.dev/release/archive?tab=linux#stable-channel) (stable channel)
-   - For example, you can directly download v3.29.1 from: https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.1-stable.zip
+   - You can directly download v3.29.1 from: https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.1-stable.zip
 - Download through web browser and extract in Downloads
 - Navigate into the extracted directory and move the `flutter` subdirectory to the `C:\Android` directory you made earlier
 - Tell flutter where Android SDK is by running this in Command Prompt:
@@ -98,14 +98,41 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 - Click "OK" to close out all windows
 - If you have Command Prompt or VSCode open, you must restart them for these changes to take effect
 
-
 [Back to Top](#table-of-contents)
 
 ----------------------------------------------------------------------------
 
-## 2. Installation
+## 2. Setting up VSCode for Flutter
 
-INSTALLATION.
+### VSCode
+
+- Download and extract VSCode Portable [here](https://code.visualstudio.com/download) (i.e., the `*.zip` version)
+   - You can directly download the latest version from: https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive
+- You can place this extracted directory anywhere you want, on your Desktop, in Program Files, etc.
+- Create a new directory to store all your Flutter apps, let's use `C:\Android\Flutter Projects` for now
+- Open VSCode by navigating to the extracted folder and executing `..\VSCode-win32-x64-1.98.1\Code.exe`
+- On the top-left, click on Explorer (`CTRL+SHIFT+E`) and on "Open Folder" to set the current working directory to `C:\Android\Flutter Projects`
+- If you see anything about "trusted execution," know that code you didn't write should be handled carefully
+
+### Flutter Extension and Configuration
+
+- On left-hand menu, choose Extensions (also, keyboard shortcut `CTRL+SHIFT+X`)
+- Search for "Flutter"
+- Install Flutter extension by Dart Code (may also install other extension dependencies like Dart)
+- In the Command Palette (`CTRL+SHIFT+P`, it is **critical** to have the "`>`" character here), type "`> flutter`" and choose "`> Flutter: Run Flutter Doctor`"
+- A popup in the bottom-right will ask about Flutter SDK, click on "Locate SDK" and point it to `C:\Android\flutter` and it will start running
+- A new pane will open at the bottom showing console output, you should have the following [√] marks:
+
+```
+[√] Flutter (REQUIRED)
+[√] Windows Version (REQUIRED)
+[√] Android toolchain (REQUIRED)
+[X] Chrome (**Don't need this for Android Virtual Device emulation**)
+[!] Visual Studio (**Don't need for AVD**)
+[!] Android Studio (**Don't need for AVD**)
+[√] Connected device (REQUIRED)
+[√] Network resources (REQUIRED)
+```
 
 [Back to Top](#table-of-contents)
 
