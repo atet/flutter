@@ -172,6 +172,8 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 
 ## 4. Next Steps
 
+The sky is the limit! You might want to learn how to build your project into an [Android Package Kit (APK)](https://stackoverflow.com/a/51682414) so that you can deploy to a physical phone.
+
 [Back to Top](#table-of-contents)
 
 ----------------------------------------------------------------------------
@@ -181,6 +183,7 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 **Description** | **URL Link**
 --- | ---
 Android SDK without Android Studio | https://stackoverflow.com/a/42179456
+Build Flutter app to APK | https://stackoverflow.com/a/51682414
 
 [Back to Top](#table-of-contents)
 
