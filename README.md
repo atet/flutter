@@ -138,17 +138,33 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 
 ----------------------------------------------------------------------------
 
-## 3. Basic Examples
+## 3. Default Application Test
 
-BASIC EXAMPLES.
+### Create Default Application
+
+- Now we can start a new project within your project folder, in the Command Palette, execute the following:
+   - "`>Flutter: New Project`"
+   - Choose "`Application`"
+   - Select the current folder to create project in, "`C:\Android\Flutter Projects`"
+   - Give the project a name or use default "`flutter_application_1`"
+- This will take a few moments for Flutter to create the project
+
+### Configure Device as AVD
+
+- The default project has a simple working application, to build and run this application on our AVD, in the Command Palette, run "`>Flutter: Select Device`"
+- Then select "**Start my avd** mobile emulator       Offline Emulators" which will boot up the AVD
+- Once the AVD is fully botted and on the home screen, leave this open in the background
+
+### Building Default Application to AVD
+
+- Click on the "`main.dart`" script and press `F5`, this will kick off the build and send the app over to your AVD
+- This simple app is a counter that increments when you click on the bottom-right button, **magnificent!**
 
 [Back to Top](#table-of-contents)
 
 ----------------------------------------------------------------------------
 
 ## 4. Next Steps
-
-NEXT STEPS.
 
 [Back to Top](#table-of-contents)
 
