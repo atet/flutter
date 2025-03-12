@@ -1,6 +1,6 @@
 # [atet](https://github.com/atet) / [**_flutter_**](https://github.com/atet/flutter/blob/main/README.md#atet--flutter)
 
-[![.img/logo_flutter.png](.img/logo_flutter.png)](#nolink)
+[![.img/flutter_logo.png](.img/flutter_logo.png)](#nolink)
 
 # Quickest Flutter Setup Yet!
 
@@ -14,8 +14,8 @@
 
 - [0. Requirements](#0-requirements)
 - [1. Dependencies](#1-dependencies)
-- [2. Installation](#2-installation)
-- [3. Basic Examples](#3-basic-examples)
+- [2. Setting up VSCode for Flutter](#2-setting-up-vscode-for-flutter)
+- [3. Default Application Test](#3-default-application-test)
 - [4. Next Steps](#4-next-steps)
 
 ### Supplemental
@@ -49,42 +49,58 @@
 - Download through web browser and double-click the `*.msi` file to install
 - During installation, change the settings below to have `JAVA_HOME` and JavaSoft (Oracle) registry keys overwritten
 
+[![.img/flutter_fig01.jpg](.img/flutter_fig01.jpg)](#nolink)
+
 ### Android SDK ***without*** the entire Android Studio
 
 - Find latest "Command line tools only" [here](https://developer.android.com/studio) (scroll all the way down), or you can directly download `v11076708` from: https://dl.google.com/android/repository/commandlinetools-win-11076708_latest.zip
 - Download through web browser and extract in Downloads
 - Create the following directory structure: `C:\Android\SDK\cmdline-tools\latest`
 - Within the `latest` directory, cut or copy all of the contents in the `cmdline-tools` directory from the unzipped file above
-- Open Command Prompt and navigate to `C:\Android\SDK\cmdline-tools\latest\bin`
+
+[![.img/flutter_fig02.png](.img/flutter_fig02.png)](#nolink)
+
+- Open Command Prompt:
+
+[![.img/flutter_fig03.jpg](.img/flutter_fig03.jpg)](#nolink)
+
+- Navigate to `C:\Android\SDK\cmdline-tools\latest\bin`:
 
 ```cmd
 > cd C:\Android\SDK\cmdline-tools\latest\bin
 ```
 
-- Run (you must respond to license prompt):
+- Run `sdkmanager` (you must respond to license prompt):
 
 ```cmd
 > sdkmanager --install "platform-tools" "platforms;android-30" "build-tools;30.0.3" "emulator" "system-images;android-30;google_apis;x86_64"
 ```
 
-- Then run (you must respond to **several** license prompts):
+- Then review licenses (REQUIRED, you must respond to **several** license prompts):
 
 ```cmd
 > sdkmanager --licenses
 ```
 
-- Create an Android Virtual Device (AVD) but do not start it (must start emulation through VSCode)
+- Create an Android Virtual Device (AVD) but do not start it (must start emulation through VSCode):
 
 ```cmd
 > avdmanager create avd -n my_avd -k "system-images;android-30;google_apis;x86_64" --device "pixel"
 ```
+
+- The above steps look like this:
+
+[![.img/flutter_fig04.jpg](.img/flutter_fig04.png)](#nolink)
 
 ### Flutter SDK
 
 - Find link to latest version of Flutter SDK [here](https://docs.flutter.dev/release/archive?tab=linux#stable-channel) (stable channel), or you can directly download `v3.29.1` from: https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.1-stable.zip
 - Download through web browser and extract in Downloads
 - Navigate into the extracted directory and move the `flutter` subdirectory to the `C:\Android` directory you made earlier
-- Tell flutter where Android SDK is by running this in Command Prompt:
+
+[![.img/flutter_fig05.jpg](.img/flutter_fig05.png)](#nolink)
+
+- Configure flutter with Android SDK path by running this in Command Prompt:
 
 ```
 > cd C:\Android\flutter\bin
@@ -93,10 +109,15 @@
 
 - In the Start Menu, search for "environment" and open the "Edit the system environment variables" entry
 - Click on "Environment Variables" in the bottom-right of the popup
+
+[![.img/flutter_fig06.jpg](.img/flutter_fig06.jpg)](#nolink)
+
 - Under "User variables," highlight the "Path" entry and click on "Edit"
 - In the popup, Click on "New" and add the path to `C:\Android\flutter\bin` here
 - Click "OK" to close out all windows
 - If you have Command Prompt or VSCode open, you must restart them for these changes to take effect
+
+[![.img/flutter_fig07.jpg](.img/flutter_fig07.png)](#nolink)
 
 [Back to Top](#table-of-contents)
 
@@ -198,7 +219,7 @@ Build Flutter app to APK | https://stackoverflow.com/a/51682414
 Issue | Solution
 --- | ---
 **"It's not working!"** | This concise tutorial has distilled hours of sweat, tears, and troubleshooting; _it can't not work_
-**"Can I install this on WSL2 in Windows 10?"** | I spun my wheels on trying to get this installed on WSL2 in Windows 10; very long story short, it's likely no longer possible due to KVM no longer being supported for Windows 10 WSL2 and only in Windows 11 now
+**"Can I install this on WSL2 in Windows 10?"** | I spun my wheels on trying to get this installed on WSL2 in Windows 10; very long story short, it's likely not possible now due to [KVM in WSL only being supported in Windows 11](https://github.com/microsoft/WSL/issues/11216#issuecomment-2065238889)
 
 [Back to Top](#table-of-contents)
 
