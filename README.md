@@ -44,13 +44,14 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 - Given Oracle's change of heart with Java 8, we'll use OpenJDK instead
 - Find the latest OpenJDK for Windows (x64) [here](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21)
    - For example, you can directly download v21.0.6 from: https://aka.ms/download-jdk/microsoft-jdk-21.0.6-windows-x64.msi
-- When installing, change the settings below to have `JAVA_HOME` and JavaSoft (Oracle) registry keys overwritten
+- Download through web browser and double-click the `*.msi` file to install
+- During installation, change the settings below to have `JAVA_HOME` and JavaSoft (Oracle) registry keys overwritten
 
 ### Android SDK ***without*** the entire Android Studio
 
 - Find latest "Command line tools only" [here](https://developer.android.com/studio) (scroll all the way down)
    - For example, you can directly download v11076708 from: https://dl.google.com/android/repository/commandlinetools-win-11076708_latest.zip
-- Extract this file in your Downloads folder
+- Download through web browser and extract in Downloads
 - Create the following directory structure: `C:\Android\SDK\cmdline-tools\latest`
 - Within the `latest` directory, cut or copy all of the contents in the `cmdline-tools` directory from the unzipped file above
 - Open Command Prompt and navigate to `C:\Android\SDK\cmdline-tools\latest\bin`
@@ -76,6 +77,27 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
 ```cmd
 > avdmanager create avd -n my_avd -k "system-images;android-30;google_apis;x86_64" --device "pixel"
 ```
+
+### Flutter SDK
+
+- Find link to latest version of Flutter SDK [here](https://docs.flutter.dev/release/archive?tab=linux#stable-channel) (stable channel)
+   - For example, you can directly download v3.29.1 from: https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.1-stable.zip
+- Download through web browser and extract in Downloads
+- Navigate into the extracted directory and move the `flutter` subdirectory to the `C:\Android` directory you made earlier
+- Tell flutter where Android SDK is by running this in Command Prompt:
+
+```
+> cd C:\Android\flutter\bin
+> flutter config --android-sdk "C:\Android\SDK"
+```
+
+- In the Start Menu, search for "environment" and open the "Edit the system environment variables" entry
+- Click on "Environment Variables" in the bottom-right of the popup
+- Under "System variables," highlight the "Path" entry and click on "Edit"
+- In the popup, Click on "New" and add the path to `C:\Android\flutter\bin` here
+- Click "OK" to close out all windows
+- If you have Command Prompt or VSCode open, you must restart them for these changes to take effect
+
 
 [Back to Top](#table-of-contents)
 
