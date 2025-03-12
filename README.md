@@ -149,16 +149,22 @@ Want to start making apps and stop messing with troubleshooting Flutter installa
    - Give the project a name or use default "`flutter_application_1`"
 - This will take a few moments for Flutter to create the project
 
-### Configure Device as AVD
+### Configure Device as Microsoft Edge Browser
 
-- The default project has a simple working application, to build and run this application on our AVD, in the Command Palette, run "`>Flutter: Select Device`"
-- Then select "**Start my avd** mobile emulator       Offline Emulators" which will boot up the AVD
-- Once the AVD is fully botted and on the home screen, leave this open in the background
+- The default project has a simple working application, to build and run this application on our AVD, we need to **first successfully build it to the Microsoft Edge browser**
+- In the Command Palette, run "`>Flutter: Select Device`"
+- Then select "**Edge** edge - web"
+- Click on the "`main.dart`" script and press `F5`, this will kick off the build and send the app over to a new Edge browser window
+- This simple app is a counter that increments when you click on the bottom-right button, **cool!**
+- Stop the app by closing our the Edge window
 
 ### Building Default Application to AVD
 
+- Now we will build and run this application on our AVD; in the Command Palette, run "`>Flutter: Select Device`"
+- Then select "**Start my avd** mobile emulator       Offline Emulators" which will boot up the AVD
+- Once the AVD is fully booted and on the home screen, leave this open in the background
 - Click on the "`main.dart`" script and press `F5`, this will kick off the build and send the app over to your AVD
-- This simple app is a counter that increments when you click on the bottom-right button, **magnificent!**
+- Now you've got the app running on a emulated Android phone, **magnificent!**
 
 [Back to Top](#table-of-contents)
 
