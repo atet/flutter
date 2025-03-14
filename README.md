@@ -181,6 +181,9 @@
 - The default project has a simple working application, to build and run this application on our AVD, we need to **first successfully build it to the Microsoft Edge browser**
 - In the Command Palette, run "`>Flutter: Select Device`"
 - Then select "**Edge** edge - web"
+
+[![.img/flutter_fig11a.png](.img/flutter_fig11a.png)](#nolink)
+
 - Click on the "`main.dart`" script and press `F5`, this will kick off the build and send the app over to a new Edge browser window
 - This simple app is a counter that increments when you click on the bottom-right button, **cool!**
 - Stop the app by pressing Stop (`SHIFT+F5`) in VSCode or by closing out the Edge window
@@ -194,8 +197,8 @@
 [![.img/flutter_fig12.png](.img/flutter_fig12.png)](#nolink)
 
 - Then select "**Start my avd** mobile emulator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Offline Emulators" which will boot up the AVD
-- After the boot up sequence the AVD will show the home screen of the emulated phone, leave this open in the background
-- Click on the "`main.dart`" script and press `F5`, this will kick off the build and send the app over to your AVD (**will take a minute to boot up from black screen**)
+- After the boot up sequence (**may take a minute to boot from black screen**)the AVD will show the home screen of the emulated phone, leave this open in the background
+- Click on the "`main.dart`" script and press `F5`, this will kick off the build and send the app over to your AVD
 - Now you've got the app running on a emulated Android phone, **magnificent!**
 - Stop the app by pressing Stop (`SHIFT+F5`) in VSCode or by closing out the AVD window
 
