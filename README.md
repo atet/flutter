@@ -45,7 +45,7 @@
 ### Java (OpenJDK)
 
 - Given Oracle's change of heart with Java 8, we'll use OpenJDK instead
-- Find the latest OpenJDK for Windows (x64) [here](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21) or you can directly download `v21.0.6` from: https://aka.ms/download-jdk/microsoft-jdk-21.0.6-windows-x64.msi
+- Directly download OpenJDK `v21.0.6` from: https://aka.ms/download-jdk/microsoft-jdk-21.0.6-windows-x64.msi
 - Download through web browser and double-click the `*.msi` file to install
 - During installation, change the settings below to have `JAVA_HOME` and JavaSoft (Oracle) registry keys overwritten
 
@@ -53,7 +53,7 @@
 
 ### Android SDK ***without*** the entire Android Studio
 
-- Find latest "Command line tools only" [here](https://developer.android.com/studio) (scroll all the way down), or you can directly download `v11076708` from: https://dl.google.com/android/repository/commandlinetools-win-11076708_latest.zip
+- Directly download Android SDK `v11076708` "Command line tools only" from: https://dl.google.com/android/repository/commandlinetools-win-11076708_latest.zip
 - Download through web browser and extract in Downloads
 - Create the following directory structure: `C:\Android\SDK\cmdline-tools\latest`
 - Within the `latest` directory, cut or copy all of the contents in the `cmdline-tools` directory from the unzipped file above
@@ -90,15 +90,15 @@
 
 - The above steps look like this:
 
-[![.img/flutter_fig04.jpg](.img/flutter_fig04.png)](#nolink)
+[![.img/flutter_fig04.png](.img/flutter_fig04.png)](#nolink)
 
 ### Flutter SDK
 
-- Find link to latest version of Flutter SDK [here](https://docs.flutter.dev/release/archive?tab=linux#stable-channel) (stable channel), or you can directly download `v3.29.1` from: https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.1-stable.zip
+- Directly download Flutter `v3.29.1` SDK from: https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.29.1-stable.zip
 - Download through web browser and extract in Downloads
 - Navigate into the extracted directory and move the `flutter` subdirectory to the `C:\Android` directory you made earlier
 
-[![.img/flutter_fig05.jpg](.img/flutter_fig05.png)](#nolink)
+[![.img/flutter_fig05.png](.img/flutter_fig05.png)](#nolink)
 
 - Configure flutter with Android SDK path by running this in Command Prompt:
 
@@ -117,7 +117,7 @@
 - Click "OK" to close out all windows
 - If you have Command Prompt or VSCode open, you must restart them for these changes to take effect
 
-[![.img/flutter_fig07.jpg](.img/flutter_fig07.png)](#nolink)
+[![.img/flutter_fig07.png](.img/flutter_fig07.png)](#nolink)
 
 [Back to Top](#table-of-contents)
 
@@ -127,18 +127,23 @@
 
 ### VSCode
 
-- Download and extract VSCode Portable [here](https://code.visualstudio.com/download) (i.e., the `*.zip` version), or you can directly download the latest version from: https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive
+- Directly download the latest version of VSCode Portable from: https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive
 - You can place this extracted directory anywhere you want, on your Desktop, in Program Files, etc.
 - Create a new directory to store all your Flutter apps, let's create `C:\Android\Flutter Projects` for this tutorial
 - Open VSCode by navigating to this extracted folder in File Explorer and executing `..\VSCode-win32-x64-1.98.1\Code.exe`
 - On the top-left, click on Explorer (`CTRL+SHIFT+E`) and on "Open Folder" to set the current working directory to `C:\Android\Flutter Projects`
 - VSCode will warn you about "trusted execution," reminding you that code you didn't write should be handled carefully
 
+[![.img/flutter_fig08.png](.img/flutter_fig08.png)](#nolink)
+
 ### Flutter Extension and Configuration
 
 - On left-hand menu, choose Extensions (also, keyboard shortcut `CTRL+SHIFT+X`)
 - Search for "Flutter"
 - Install Flutter extension by Dart Code (may also install other extension dependencies like Dart)
+
+[![.img/flutter_fig09.jpg](.img/flutter_fig09.jpg)](#nolink)
+
 - In the Command Palette (`CTRL+SHIFT+P`, it is **critical** to have the "`>`" character here), type "`> flutter`" and choose "`> Flutter: Run Flutter Doctor`"
 - A popup in the bottom-right will ask about Flutter SDK, click on "Locate SDK" and point it to `C:\Android\flutter` and it will continue its diagnostic assessment
 - A new pane will open at the bottom showing console output, you should have the following `[√]` marks:
@@ -169,6 +174,8 @@
    - Give the project a name or use default "`flutter_application_1`"
 - This will take a few moments for Flutter to create the project
 
+[![.img/flutter_fig10.png](.img/flutter_fig10.png)](#nolink)
+
 ### Configure Device as Microsoft Edge Browser
 
 - The default project has a simple working application, to build and run this application on our AVD, we need to **first successfully build it to the Microsoft Edge browser**
@@ -178,14 +185,21 @@
 - This simple app is a counter that increments when you click on the bottom-right button, **cool!**
 - Stop the app by pressing Stop (`SHIFT+F5`) in VSCode or by closing out the Edge window
 
+[![.img/flutter_fig11.jpg](.img/flutter_fig11.jpg)](#nolink)
+
 ### Building Default Application to AVD
 
 - Now we will build and run this application on our AVD; in the Command Palette, run "`>Flutter: Select Device`"
-- Then select "**Start my avd** mobile emulator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Offline Emulators" which will boot up the AVD
+
+[![.img/flutter_fig12.png](.img/flutter_fig12.png)](#nolink)
+
+- Then select "**Start my avd** mobile emulator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Offline Emulators" which will boot up the AVD
 - After the boot up sequence the AVD will show the home screen of the emulated phone, leave this open in the background
-- Click on the "`main.dart`" script and press `F5`, this will kick off the build and send the app over to your AVD
+- Click on the "`main.dart`" script and press `F5`, this will kick off the build and send the app over to your AVD (**will take a minute to boot up from black screen**)
 - Now you've got the app running on a emulated Android phone, **magnificent!**
 - Stop the app by pressing Stop (`SHIFT+F5`) in VSCode or by closing out the AVD window
+
+[![.img/flutter_fig13.jpg](.img/flutter_fig13.jpg)](#nolink)
 
 [Back to Top](#table-of-contents)
 
@@ -207,6 +221,10 @@
 
 **Description** | **URL Link**
 --- | ---
+Latest OpenJDK for Windows (x64) | https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21
+Latest Android SDK "Command line tools only" (scroll all the way down) | https://developer.android.com/studio
+Latest Flutter SDK (stable channel) | https://docs.flutter.dev/release/archive?tab=linux#stable-channel
+Latest VSCode Portable (i.e., the `*.zip` version) | https://code.visualstudio.com/download
 Android SDK without Android Studio | https://stackoverflow.com/a/42179456
 Build Flutter app to APK | https://stackoverflow.com/a/51682414
 
