@@ -30,7 +30,7 @@
 - Unfortunately, there's no one-click install solution for this complex development environment
 - This tutorial is only for Android mobile applications, which means less components
 - Tested in Windows 10 (I'm sure this works for Windows 11 too)
-- Need fast internet for ~1.5 GB of file downloads
+- Need fast internet for ~2 GB of file downloads
 - Do not have any prior installations of:
    - Java for Windows
    - Android SDK
@@ -66,27 +66,27 @@
 
 - Navigate to `C:\Android\SDK\cmdline-tools\latest\bin`:
 
-```cmd
-> cd C:\Android\SDK\cmdline-tools\latest\bin
-```
+   ```cmd
+   > cd C:\Android\SDK\cmdline-tools\latest\bin
+   ```
 
 - Run `sdkmanager` (you must respond to license prompt):
 
-```cmd
-> sdkmanager --install "platform-tools" "platforms;android-30" "build-tools;30.0.3" "emulator" "system-images;android-30;google_apis;x86_64"
-```
+   ```cmd
+   > sdkmanager --install "platform-tools" "platforms;android-30" "build-tools;30.0.3" "emulator" "system-images;android-30;google_apis;x86_64"
+   ```
 
 - Then review licenses (REQUIRED, you must respond to **several** license prompts):
 
-```cmd
-> sdkmanager --licenses
-```
+   ```cmd
+   > sdkmanager --licenses
+   ```
 
 - Create an Android Virtual Device (AVD) but do not start it (must start emulation through VSCode):
 
-```cmd
-> avdmanager create avd -n my_avd -k "system-images;android-30;google_apis;x86_64" --device "pixel"
-```
+   ```cmd
+   > avdmanager create avd -n my_avd -k "system-images;android-30;google_apis;x86_64" --device "pixel"
+   ```
 
 - The above steps look like this:
 
@@ -102,10 +102,10 @@
 
 - Configure flutter with Android SDK path by running this in Command Prompt:
 
-```
-> cd C:\Android\flutter\bin
-> flutter config --android-sdk "C:\Android\SDK"
-```
+   ```
+   > cd C:\Android\flutter\bin
+   > flutter config --android-sdk "C:\Android\SDK"
+   ```
 
 - In the Start Menu, search for "environment" and open the "Edit the system environment variables" entry
 - Click on "Environment Variables" in the bottom-right of the popup
@@ -148,16 +148,16 @@
 - A popup in the bottom-right will ask about Flutter SDK, click on "Locate SDK" and point it to `C:\Android\flutter` and it will continue its diagnostic assessment
 - A new pane will open at the bottom showing console output, you should have the following `[√]` marks:
 
-```
-[√] Flutter (REQUIRED)
-[√] Windows Version (REQUIRED)
-[√] Android toolchain (REQUIRED)
-[X] Chrome (**Don't need this for Android Virtual Device emulation**)
-[!] Visual Studio (**Don't need for AVD**)
-[!] Android Studio (**Don't need for AVD**)
-[√] Connected device (REQUIRED)
-[√] Network resources (REQUIRED)
-```
+   ```
+   [√] Flutter (REQUIRED)
+   [√] Windows Version (REQUIRED)
+   [√] Android toolchain (REQUIRED)
+   [X] Chrome (**Don't need this for Android Virtual Device emulation**)
+   [!] Visual Studio (**Don't need for AVD**)
+   [!] Android Studio (**Don't need for AVD**)
+   [√] Connected device (REQUIRED)
+   [√] Network resources (REQUIRED)
+   ```
 
 [Back to Top](#table-of-contents)
 
@@ -210,11 +210,11 @@
 
 ## 4. Next Steps
 
-**The sky is the limit!**
+***The sky is the limit!***
 
+- Interface your VSCode environment with free artificial intelligence (AI) tools in [my easy 10-minute AI copilot tutorial](https://github.com/atet/copilot?tab=readme-ov-file#atet--copilot) and take your development to the next level
 - Learn how to build your project into an [Android Package Kit (APK)](https://stackoverflow.com/a/51682414) so that you can deploy to a physical phone
-- Configure additional components to build to a Windows desktop application or an iOS mobile app
-- Interface your VSCode environment with large language models through [Continue.dev](https://www.youtube.com/watch?v=V3Yq6w9QaxI) and take your development to the next level
+- Configure additional components to build to a Windows desktop application (requires full Visual Studio installation) or an iOS mobile app (requires an Apple/MacOS computer)
 
 [Back to Top](#table-of-contents)
 
